@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ccjjkd2gwkatf"]
+
+[ext_resource type="Script" uid="uid://b8k55q1r2as7i" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="FontFile" uid="uid://b7ywp53glx0e" path="res://assets/fonts/kenvector_future_thin.ttf" id="1_yqeox"]
+
+[node name="Menu" type="Control" unique_id=977091557]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1725187273]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -222.5
+offset_top = 20.0
+offset_right = 222.5
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 64
+text = "Recolector"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="." unique_id=779827652]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -38.0
+offset_right = 113.5
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 60
+text = "Play"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

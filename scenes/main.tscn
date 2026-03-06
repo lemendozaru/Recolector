@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://r74glo6q1ojx"]
+
+[ext_resource type="FontFile" uid="uid://b7ywp53glx0e" path="res://assets/fonts/kenvector_future_thin.ttf" id="1_o5qli"]
+
+[node name="Main" type="Node" unique_id=1920193825]
+
+[node name="UI" type="Control" parent="." unique_id=1330591744]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CoinLabel" type="Label" parent="UI" unique_id=1526869217]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.5
+offset_top = 20.0
+offset_right = 190.5
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_o5qli")
+theme_override_font_sizes/font_size = 60
+text = "Monedas: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="UI" unique_id=934669997]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.5
+offset_top = 85.0
+offset_right = 190.5
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_o5qli")
+theme_override_font_sizes/font_size = 60
+text = "Nivel: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpButton" type="Button" parent="UI" unique_id=412244225]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -185.0
+offset_right = 37.5
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DownButton" type="Button" parent="UI" unique_id=1053643775]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -95.0
+offset_right = 37.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LeftButton" type="Button" parent="UI" unique_id=99752290]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.5
+offset_top = -95.0
+offset_right = -52.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RightButton" type="Button" parent="UI" unique_id=1113439234]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 52.5
+offset_top = -95.0
+offset_right = 127.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
