@@ -6,6 +6,8 @@ var score : int
 var canMove : bool
 var minPositions : Vector2 = Vector2(21, 168)
 var maxPositions : Vector2 = Vector2(519, 743)
+# monedas recolectadas por nivel
+var coins_collected : int
 
 func _process(delta: float) -> void:
 	if canMove:
@@ -59,5 +61,15 @@ func _on_right_button_button_up() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("coins"):
+		# contamos las monedas recolectadas
+		coins_collected += 1
+		# incrementamos el puntaje
 		score += 1
+		# cargamos el nodo CoinsLabel del nodo padre y le asignamos el puntaje
 		get_parent().get_node("UI/CoinsLabel").text = "Coins: " + str(score)
+		# si coincide el nivel con las monedas recolectadas...
+		if coins_collected == get_parent().level:
+			# reiniciamos el contador de monedas
+			coins_collected = 0
+			get_parent().level_passed()
+			
