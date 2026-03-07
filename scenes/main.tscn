@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c4qf10rd57cer" path="res://assets/art/Player/Idle.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://eoak3ujraspr" path="res://scenes/coin.tscn" id="2_85g3d"]
 [ext_resource type="Script" uid="uid://bqqf6nrp3pmyd" path="res://scripts/player.gd" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ca5f3108plimq" path="res://scenes/confetti_particles.tscn" id="3_choun"]
 [ext_resource type="Texture2D" uid="uid://c2j8o2igsmbo8" path="res://assets/art/Player/Back.png" id="3_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dii7leb05n6yq" path="res://assets/art/Player/Death.png" id="4_tipki"]
 [ext_resource type="Texture2D" uid="uid://db3rlr3blh6ad" path="res://assets/art/Player/Front.png" id="5_85g3d"]
@@ -163,6 +164,7 @@ size = Vector2(8, 16)
 [node name="Main" type="Node" unique_id=1920193825]
 script = ExtResource("1_tipki")
 coin = ExtResource("2_85g3d")
+confetti = ExtResource("3_choun")
 
 [node name="UI" type="Control" parent="." unique_id=1330591744]
 layout_mode = 3

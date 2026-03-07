@@ -4,6 +4,8 @@ extends Node
 var level : int = 1
 # Escena a instanciar para nuestras monedas
 @export var coin : PackedScene
+# instanciamos el confetti
+@export var confetti : PackedScene
 # Área donde aparecerán las monedas
 var minPositions : Vector2 = Vector2(21, 168)
 var maxPositions : Vector2 = Vector2(519, 743)
@@ -36,3 +38,10 @@ func level_passed():
 	# actualizamos el texto en pantalla
 	$UI/LevelLabel.text = "Nivel: " + str(level)
 	instantiate_coins()
+	instantiate_confetti()
+	
+func instantiate_confetti():
+	var confetti_instance : CPUParticles2D = confetti.instantiate()
+	add_child(confetti_instance)
+	confetti_instance.position = Vector2(270,980)
+	confetti_instance.emitting = true
