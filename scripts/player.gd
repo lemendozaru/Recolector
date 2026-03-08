@@ -9,12 +9,21 @@ var maxPositions : Vector2 = Vector2(519, 743)
 # monedas recolectadas por nivel
 var coins_collected : int
 
-func _process(delta: float) -> void:
+func _process(delta: float):
+	# si nos podemos mover...
 	if canMove:
+		# la posición se obtiene de la dirección por velocidad
 		position += direction * speed * delta
 		position.x = clamp(position.x, minPositions.x, maxPositions.x)
 		position.y = clamp(position.y, minPositions.y, maxPositions.y)
+	# si no...
 	else:
+		# si estamos en game over
+		if get_parent().game_over:
+			# reproduce la animación de muerte
+			$AnimatedSprite2D.animation = "Death"
+			# y retorna o termina
+			return
 		$AnimatedSprite2D.animation = "Idle"
 
 func _on_up_button_button_down() -> void:
@@ -66,7 +75,10 @@ func _on_area_entered(area: Area2D) -> void:
 		# incrementamos el puntaje
 		score += 1
 		# cargamos el nodo CoinsLabel del nodo padre y le asignamos el puntaje
-		get_parent().get_node("UI/CoinsLabel").text = "Coins: " + str(score)
+		get_parent().get_node("UI/CoinsLabel").text = "Monedas: " + str(score)
+		# cargamos el nodo de animación de UI
+		get_parent().get_node("UI/CoinsLabelAnimationPlayer").play("IncreaseDecrease")
+		
 		# si coincide el nivel con las monedas recolectadas...
 		if coins_collected == get_parent().level:
 			# reiniciamos el contador de monedas
